@@ -172,12 +172,11 @@ export const footerColumns: { title: string; links: NavLink[] }[] = [
       { href: "/kontakt", label: "Kontakt" },
     ],
   },
-  {
-    title: "Rechtliches",
-    links: [
-      { href: "/impressum", label: "Impressum" },
-      { href: "/datenschutz", label: "Datenschutz" },
-      { href: "/barrierefreiheit", label: "Barrierefreiheit" },
-    ],
-  },
+];
+
+// Shown in the footer's bottom bar, so the Impressum is one click away on every page.
+export const legalLinks: NavLink[] = [
+  { href: "/impressum", label: "Impressum" },
+  { href: "/datenschutz", label: "Datenschutz" },
+  { href: "/barrierefreiheit", label: "Barrierefreiheit" },
 ];
