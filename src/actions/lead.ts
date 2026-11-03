@@ -6,6 +6,7 @@ import { z } from "zod";
 import { getCategory, getTool } from "@/data";
 import { trackServerEvent } from "@/lib/analytics";
 import { sizeLabels } from "@/lib/labels";
+import { mailConfigured, sendMail } from "@/lib/mail";
 import { CompanySize } from "@/lib/schema";
 
 const TIMEFRAMES = {
@@ -72,7 +73,7 @@ const TEXT_FIELDS = ["company", "name", "email", "phone", "message"] as const;
 type TextField = (typeof TEXT_FIELDS)[number];
 
 // Flow (§14.3): Zod → honeypot → email to the Dettingenstack inbox (the team checks each request and forwards it
-// manually) + confirmation to the requester. No database. Without Brevo credentials nothing is sent and the
+// manually) + confirmation to the requester. No database. Without Resend credentials nothing is sent and the
 // form says so honestly.
 export async function requestQuote(
   _prev: LeadState,
@@ -112,10 +113,8 @@ export async function requestQuote(
   }
 
   const lead = parsed.data;
-  const apiKey = process.env.BREVO_API_KEY;
-  const sender = process.env.LEADS_SENDER_EMAIL;
   const inbox = process.env.LEADS_INBOX_EMAIL;
-  if (!apiKey || !sender || !inbox) {
+  if (!mailConfigured() || !inbox) {
     return {
       status: "not-ready",
       values,
@@ -139,40 +138,19 @@ export async function requestQuote(
     lead.message || "(keine Nachricht)",
   ].join("\n");
 
-  const send = (
-    to: string,
-    subject: string,
-    textContent: string,
-    replyTo?: string,
-  ) =>
-    fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "api-key": apiKey,
-        "Content-Type": "application/json",
-        accept: "application/json",
-      },
-      body: JSON.stringify({
-        sender: { email: sender, name: "Dettingenstack" },
-        to: [{ email: to }],
-        subject,
-        textContent,
-        ...(replyTo ? { replyTo: { email: replyTo } } : {}),
-      }),
-    });
-
   try {
-    const internal = await send(
-      inbox,
-      `Angebotsanfrage: ${vendorNames.join(", ")}`,
-      summary,
-      lead.email,
-    );
-    if (!internal.ok) throw new Error(`Brevo ${internal.status}`);
-    await send(
-      lead.email,
-      "Deine Angebotsanfrage bei Dettingenstack",
-      [
+    await sendMail({
+      fromName: "Dettingenstack",
+      to: inbox,
+      subject: `Angebotsanfrage: ${vendorNames.join(", ")}`,
+      text: summary,
+      replyTo: lead.email,
+    });
+    await sendMail({
+      fromName: "Dettingenstack",
+      to: lead.email,
+      subject: "Deine Angebotsanfrage bei Dettingenstack",
+      text: [
         `Hallo ${lead.name},`,
         "",
         `danke für deine Anfrage. Wir geben deine Angaben an diese Anbieter weiter: ${vendorNames.join(", ")}.`,
@@ -182,7 +160,7 @@ export async function requestQuote(
         "",
         "Dein Dettingenstack-Team",
       ].join("\n"),
-    );
+    });
   } catch {
     return {
       status: "error",

@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { CONTACT_SUBJECTS, type ContactSubject } from "@/lib/contact";
+import { mailConfigured, sendMail } from "@/lib/mail";
 
 const schema = z.object({
   name: z
@@ -42,7 +43,7 @@ export type ContactState = {
   values?: Partial<Record<TextField, string>>;
 };
 
-// Contact (§11.19) and vendor form (§11.18). Sent by Brevo to CONTACT_INBOX_EMAIL; without credentials
+// Contact (§11.19) and vendor form (§11.18). Sent by Resend to CONTACT_INBOX_EMAIL; without credentials
 // nothing is sent and the form says so honestly. No database.
 export async function sendContact(
   _prev: ContactState,
@@ -72,11 +73,9 @@ export async function sendContact(
     };
   }
 
-  const apiKey = process.env.BREVO_API_KEY;
-  const sender = process.env.LEADS_SENDER_EMAIL;
   const inbox =
     process.env.CONTACT_INBOX_EMAIL ?? process.env.LEADS_INBOX_EMAIL;
-  if (!apiKey || !sender || !inbox) {
+  if (!mailConfigured() || !inbox) {
     return {
       status: "not-ready",
       values,
@@ -99,22 +98,13 @@ export async function sendContact(
     .join("\n");
 
   try {
-    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "api-key": apiKey,
-        "Content-Type": "application/json",
-        accept: "application/json",
-      },
-      body: JSON.stringify({
-        sender: { email: sender, name: "Dettingenstack Kontaktformular" },
-        to: [{ email: inbox }],
-        replyTo: { email: c.email, name: c.name },
-        subject: `Kontakt: ${CONTACT_SUBJECTS[c.subject]}`,
-        textContent: text,
-      }),
+    await sendMail({
+      fromName: "Dettingenstack Kontaktformular",
+      to: inbox,
+      subject: `Kontakt: ${CONTACT_SUBJECTS[c.subject]}`,
+      text,
+      replyTo: `${c.name} <${c.email}>`,
     });
-    if (!res.ok) throw new Error(`Brevo ${res.status}`);
   } catch {
     return {
       status: "error",

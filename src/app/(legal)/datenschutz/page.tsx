@@ -2,9 +2,10 @@ import type { Metadata, Route } from "next";
 import Link from "next/link";
 import { LegalPage } from "@/components/content/legal-page";
 import { formatDate } from "@/lib/format";
+import { mailConfigured } from "@/lib/mail";
 import { operator } from "@/lib/site";
 
-// Describes only what the site actually does. Sections for Plausible and the Brevo-backed forms switch with the
+// Describes only what the site actually does. Sections for Plausible and the Resend-backed forms switch with the
 // configuration, so the text never claims a service that is not running (Art. 13 DSGVO).
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -17,11 +18,7 @@ const UPDATED = "2026-11-03";
 
 export default function DatenschutzPage() {
   const analytics = Boolean(process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN);
-  const formsLive = Boolean(
-    process.env.BREVO_API_KEY &&
-      process.env.LEADS_SENDER_EMAIL &&
-      process.env.LEADS_INBOX_EMAIL,
-  );
+  const formsLive = mailConfigured();
   const responsible = operator.contentResponsible;
 
   return (
@@ -130,10 +127,11 @@ export default function DatenschutzPage() {
             Wenn du uns über das Kontaktformular schreibst, verarbeiten wir
             Name, E-Mail-Adresse, Betreff und Nachricht, um deine Anfrage zu
             beantworten (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Den Versand der
-            E-Mails übernimmt die Sendinblue SAS (Brevo), 106 boulevard
-            Haussmann, 75008 Paris, Frankreich, als Auftragsverarbeiterin. Wir
-            löschen die Nachricht, sobald die Anfrage erledigt ist und keine
-            Aufbewahrungspflichten bestehen.
+            E-Mails übernimmt Resend (Plus Five Five, Inc., USA) als
+            Auftragsverarbeiterin; der Versand läuft über Server in der EU
+            (Irland). Für mögliche Übermittlungen in die USA stützen wir uns auf
+            Standardvertragsklauseln. Wir löschen die Nachricht, sobald die
+            Anfrage erledigt ist und keine Aufbewahrungspflichten bestehen.
           </p>
           <p>
             Bei einer Angebotsanfrage geben wir deine Angaben nur an die

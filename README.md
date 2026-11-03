@@ -69,7 +69,9 @@ windream.com now redirects to the dataglobal Group, so windream carries their lo
 Kostenrechner (`?kategorie=&anzahl=`), Software-Finder (`?k=`, 6 questions per category in `src/data/quizzes/index.ts`)
 and Vergleichstool work across all 10 categories; category hubs link to both with prefilled parameters.
 
-Still open: hands-on tests (all scores are drafts), Brevo/Friendly Captcha
-credentials (forms say „wird eingerichtet“ until `BREVO_API_KEY`, `LEADS_SENDER_EMAIL`, `LEADS_INBOX_EMAIL` /
-`CONTACT_INBOX_EMAIL` are set), real author profiles, OG images, Playwright e2e. Legal pages are skeletons and stay
+Forms send via Resend (`src/lib/mail.ts`, domain dettingenstack.de verified in eu-west-1). They say „wird
+eingerichtet“ until `RESEND_API_KEY`, `LEADS_SENDER_EMAIL`, `LEADS_INBOX_EMAIL` (/ `CONTACT_INBOX_EMAIL`) are set;
+see `.env.example`.
+
+Still open: hands-on tests (all scores are drafts), newsletter double opt-in + Friendly Captcha, real author profiles, OG images, Playwright e2e. Legal pages are skeletons and stay
 `noindex` until a lawyer has reviewed them.
