@@ -1,0 +1,62 @@
+## Warum ein Passwort nicht reicht
+
+Die meisten Kontoübernahmen beginnen mit einem Passwort, das woanders gestohlen, erraten oder per Phishing abgefangen wurde. Eine zweite Bestätigung – per App, Sicherheitsschlüssel oder Passkey – macht ein gestohlenes Passwort allein wertlos. Business-Software enthält Gehälter, Kundendaten und Zahlungsinformationen. Zwei-Faktor-Authentisierung (2FA) gehört deshalb zum Mindeststandard.
+
+## Die Verfahren im Vergleich
+
+<DataTable
+  head={["Verfahren", "Sicherheit", "Hinweis"]}
+  rows={[
+    ["SMS-Code", "besser als nichts", "anfällig für SIM-Tausch und Phishing"],
+    ["Authenticator-App (TOTP)", "gut", "weit verbreitet, aber Codes lassen sich abphishen"],
+    ["Push-Bestätigung", "gut", "auf Zahlenabgleich achten, sonst droht Bestätigung aus Gewohnheit"],
+    ["Sicherheitsschlüssel (FIDO2)", "sehr gut", "phishing-resistent, Hardware nötig"],
+    ["Passkeys", "sehr gut", "phishing-resistent, auf Smartphone oder Rechner gespeichert"],
+  ]}
+/>
+
+## Single Sign-On
+
+Beim Single Sign-On (SSO) melden sich Beschäftigte einmal bei einem zentralen Identitätsanbieter an, etwa Microsoft Entra ID oder Google Workspace, und sind dann in allen angebundenen Tools angemeldet. Die Vorteile:
+
+- **Zentrale 2FA:** Du erzwingst den zweiten Faktor an einer Stelle statt in jedem Tool.
+- **Sauberer Austritt:** Ein gesperrtes Konto sperrt alle Tools gleichzeitig.
+- **Weniger Passwörter:** weniger Wiederverwendung, weniger Support-Anfragen.
+
+Technisch laufen SSO-Anbindungen meist über SAML 2.0 oder OpenID Connect. Mit SCIM legen Tools Benutzer zudem automatisch an und entfernen sie.
+
+<Callout type="wichtig">
+  Viele Anbieter bieten SSO nur im teuersten Tarif an. Prüfe das vor der Kalkulation – der Aufpreis kann bei vielen Nutzern erheblich sein.
+</Callout>
+
+## Was NIS2 verlangt
+
+Das NIS2-Umsetzungsgesetz ist im Dezember 2025 in Kraft getreten ([Überblick der Kanzlei Heuking](https://www.heuking.de/de/news-events/newsletter-fachbeitraege/artikel/ab-jetzt-gilts-nis2-umsetzungsgesetz-in-kraft.html)). Es betrifft „wichtige“ und „besonders wichtige“ Einrichtungen in bestimmten Sektoren, grob ab 50 Beschäftigten oder 10 Mio. € Umsatz. Für sie nennt [§ 30 Abs. 2 Nr. 10 BSIG](https://www.gesetze-im-internet.de/bsig_2025/__30.html) ausdrücklich die Verwendung von Multi-Faktor-Authentifizierung oder kontinuierlicher Authentifizierung als Risikomanagementmaßnahme. Auch wer nicht unter NIS2 fällt, kann sich daran orientieren – Kunden verlangen solche Standards zunehmend von ihren Lieferanten.
+
+Für personenbezogene Daten verlangt außerdem Art. 32 [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679) ein dem Risiko angemessenes Schutzniveau. Eine sichere Anmeldung ist dafür ein naheliegender Baustein.
+
+## Fragen an den Anbieter
+
+<Checklist
+  items={[
+    "Gibt es 2FA, und kann ich sie für alle Nutzer erzwingen?",
+    "Welche Verfahren werden unterstützt – App, Sicherheitsschlüssel, Passkeys?",
+    "Gibt es SSO per SAML oder OpenID Connect, und in welchem Tarif?",
+    "Werden Benutzer per SCIM angelegt und entfernt?",
+    "Gibt es ein Protokoll über Anmeldungen und Admin-Aktionen?",
+    "Wie funktioniert die Wiederherstellung, wenn jemand sein Gerät verliert?",
+  ]}
+/>
+
+## Einführung ohne Chaos
+
+<Steps
+  steps={[
+    { title: "Admins zuerst", text: "Konten mit Admin-Rechten sofort auf 2FA umstellen." },
+    { title: "Ankündigen", text: "Zwei Wochen vorher erklären, warum und wie – mit kurzer Anleitung." },
+    { title: "Erzwingen", text: "Nach der Übergangszeit 2FA für alle Nutzer verpflichtend machen." },
+    { title: "Wiederherstellung regeln", text: "Notfallcodes und ein klarer Weg über die IT, wenn ein Gerät verloren geht." },
+  ]}
+/>
+
+Weitere Sicherheitsfragen an Software-Anbieter stehen im [DSGVO-Check für Software](/ratgeber/dsgvo-check-software).

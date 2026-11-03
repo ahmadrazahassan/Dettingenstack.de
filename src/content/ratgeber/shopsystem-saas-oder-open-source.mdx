@@ -1,0 +1,61 @@
+## Die beiden Modelle
+
+**SaaS-Shops** mietest du: Der Anbieter betreibt Server, Software und Sicherheit, du zahlst eine monatliche Gebühr und oft eine Transaktionsgebühr. **Open-Source-Shops** installierst du selbst oder lässt sie von einer Agentur betreiben. Die Software ist häufig in einer Grundversion kostenlos, Kosten entstehen durch Hosting, Erweiterungen, Wartung und Entwicklung.
+
+<DataTable
+  head={["Kriterium", "SaaS", "Open Source"]}
+  rows={[
+    ["Start", "in Tagen, ohne Technikkenntnisse", "Wochen bis Monate, meist mit Agentur"],
+    ["Laufende Kosten", "Monatsgebühr, Transaktionsgebühren, Apps", "Hosting, Wartung, Updates, Plugins"],
+    ["Anpassbarkeit", "im Rahmen von Themes und Apps", "nahezu unbegrenzt"],
+    ["Updates und Sicherheit", "macht der Anbieter", "deine Verantwortung oder die deiner Agentur"],
+    ["Datenhoheit", "Daten beim Anbieter, Export prüfen", "Daten auf deinem Server"],
+    ["Abhängigkeit", "vom Anbieter und seinen Preisen", "von Agentur oder eigenem Know-how"],
+  ]}
+/>
+
+## Wann SaaS passt
+
+Ein gemieteter Shop ist sinnvoll, wenn du schnell starten willst, kein eigenes Technikteam hast und dein Geschäftsmodell mit Standardfunktionen auskommt. Achte auf die Kosten bei steigendem Umsatz: Transaktionsgebühren und kostenpflichtige Apps summieren sich. Rechne deshalb mit deinem geplanten Umsatz in zwei Jahren, nicht mit dem heutigen.
+
+## Wann Open Source passt
+
+Ein Open-Source-Shop lohnt sich bei besonderen Anforderungen: komplexe Produktkonfiguratoren, B2B-Preislisten je Kunde, viele Schnittstellen oder ein eigener Checkout. Plane ein Budget für regelmäßige Updates ein – ungepflegte Shops sind ein Sicherheitsrisiko. Frag Agenturen nach Wartungsverträgen mit festen Reaktionszeiten.
+
+<Callout type="tipp">
+  Viele Open-Source-Shops gibt es auch als gehostete Cloud-Version des Herstellers. Das ist ein Mittelweg: weniger Betriebsaufwand, aber mehr Anpassbarkeit als bei reinen SaaS-Shops.
+</Callout>
+
+## Deutsche Besonderheiten
+
+<Checklist
+  items={[
+    "Rechtstexte (AGB, Widerrufsbelehrung, Datenschutz) aktuell halten, oft per Schnittstelle zu einem Rechtstext-Dienst",
+    "Bestellbutton mit eindeutiger Beschriftung wie „zahlungspflichtig bestellen“",
+    "Grundpreisangaben und Versandkosten korrekt anzeigen",
+    "Gängige Zahlungsarten: Rechnung, PayPal, Lastschrift, Karte, Echtzeitüberweisung",
+    "Rechnungen mit allen Pflichtangaben nach § 14 UStG, im B2B-Geschäft künftig als E-Rechnung",
+    "Cookie-Einwilligung für Tracking und Marketing-Tools",
+  ]}
+/>
+
+Die Pflichtangaben auf Rechnungen regelt [§ 14 UStG](https://www.gesetze-im-internet.de/ustg_1980/__14.html). Verkaufst du an Unternehmen, betrifft dich die [E-Rechnungspflicht](/ratgeber/e-rechnungspflicht) ab 2027 beziehungsweise 2028.
+
+## Anbindung an Warenwirtschaft und Buchhaltung
+
+Ab einer gewissen Bestellmenge ist die Anbindung an ein ERP oder eine Warenwirtschaft entscheidend: Lagerbestände, Versandetiketten, Rechnungen und Buchhaltungsexport sollen ohne Abtippen laufen. Prüfe, ob es für deine Warenwirtschaft eine gepflegte Schnittstelle gibt. Mehr zur Auswahl im Ratgeber [ERP-Auswahl in 7 Schritten](/ratgeber/erp-auswahl).
+
+## Datenschutz
+
+Ein Shop verarbeitet Kundendaten, Zahlungsdaten und oft Tracking-Daten. Für den Shop-Anbieter oder Hoster brauchst du einen Auftragsverarbeitungsvertrag nach Art. 28 [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679), für Tracking im Regelfall eine Einwilligung. Die Prüffragen stehen im [DSGVO-Check für Software](/ratgeber/dsgvo-check-software).
+
+## Entscheidungshilfe
+
+<Steps
+  steps={[
+    { title: "Anforderungen sammeln", text: "Sortimentsgröße, Zielgruppe (B2C oder B2B), Zahlungsarten, Schnittstellen." },
+    { title: "Kosten über drei Jahre rechnen", text: "Gebühren, Apps, Hosting, Agentur und interne Zeit." },
+    { title: "Zwei Systeme testen", text: "Je einen SaaS- und einen Open-Source-Shop mit eigenen Produkten aufsetzen." },
+    { title: "Exit prüfen", text: "Wie kommen Produkte, Kunden und Bestellungen bei einem Wechsel heraus?" },
+  ]}
+/>

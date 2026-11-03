@@ -1,0 +1,74 @@
+## Du bleibst verantwortlich
+
+Sobald du Personal-, Kunden- oder Bewerberdaten in eine Cloud-Software gibst, verarbeitet der Anbieter diese Daten in deinem Auftrag. Verantwortlich im Sinne der [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679) bleibst du. Der Anbieter ist Auftragsverarbeiter – und du musst ihn sorgfältig auswählen (Art. 28 Abs. 1 DSGVO). Die folgenden fünf Punkte decken die häufigsten Lücken ab.
+
+## 1. Auftragsverarbeitungsvertrag (AVV)
+
+Ohne Vertrag nach Art. 28 Abs. 3 DSGVO darfst du keine personenbezogenen Daten übermitteln. Seriöse Anbieter stellen einen AVV im Kundenkonto bereit oder schicken ihn auf Anfrage. Prüfe, ob er Folgendes regelt:
+
+<Checklist
+  items={[
+    "Gegenstand, Dauer, Art und Zweck der Verarbeitung",
+    "Art der Daten und Kategorien betroffener Personen",
+    "Weisungsrecht und Vertraulichkeit",
+    "Technische und organisatorische Maßnahmen (TOM) als Anlage",
+    "Liste der Subunternehmer und Informationspflicht bei Änderungen",
+    "Unterstützung bei Betroffenenrechten und Datenpannen",
+    "Löschung oder Rückgabe der Daten am Vertragsende",
+    "Kontrollrechte für dich",
+  ]}
+/>
+
+## 2. Serverstandort und Zugriff
+
+„Server in Deutschland“ ist ein gutes Zeichen, aber nicht die ganze Antwort. Wichtig ist auch, **wer** auf die Daten zugreifen kann: Support-Teams außerhalb der EU, ein US-Mutterkonzern oder Subunternehmer für E-Mail-Versand und Analyse. Ein Fernzugriff aus einem Drittland gilt ebenfalls als Übermittlung.
+
+Frag deshalb konkret nach: Wo liegen Primärdaten und Backups? Welche Subunternehmer sitzen außerhalb der EU? Von wo aus arbeitet der Support?
+
+## 3. Übermittlungen in Drittländer
+
+Für Übermittlungen außerhalb des Europäischen Wirtschaftsraums brauchst du eine Grundlage nach Art. 44 ff. DSGVO:
+
+<DataTable
+  head={["Grundlage", "Wann sie greift"]}
+  rows={[
+    ["Angemessenheitsbeschluss", "Die EU-Kommission hat das Datenschutzniveau des Landes anerkannt, etwa für die Schweiz oder das Vereinigte Königreich."],
+    ["EU-US Data Privacy Framework", "Für US-Empfänger, die sich zertifiziert haben. Prüfe den Eintrag in der offiziellen Liste."],
+    ["Standardvertragsklauseln", "Vertragliche Lösung, meist mit einer Bewertung der Rechtslage im Empfängerland (Transfer Impact Assessment)."],
+  ]}
+/>
+
+Ob ein US-Anbieter oder sein Subunternehmer zertifiziert ist, siehst du in der [Liste des Data Privacy Framework](https://www.dataprivacyframework.gov/). Achte darauf, dass die Zertifizierung die Art von Daten abdeckt, um die es geht – bei Personaldaten ist „HR data“ ausdrücklich vorgesehen.
+
+## 4. Technische und organisatorische Maßnahmen
+
+Art. 32 DSGVO verlangt ein Schutzniveau, das dem Risiko angemessen ist. Lass dir die TOM zeigen und achte auf Verschlüsselung bei Übertragung und Speicherung, Zwei-Faktor-Anmeldung, Rollen und Rechte, Protokollierung und Backups.
+
+Zertifikate helfen bei der Einschätzung: **ISO/IEC 27001** zeigt ein geprüftes Sicherheitsmanagement, der [BSI-Kriterienkatalog C5](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/kriterienkatalog-c5_node.html) richtet sich speziell an Cloud-Anbieter. Lass dir den Geltungsbereich des Zertifikats zeigen – manchmal gilt es nur für das Rechenzentrum, nicht für die Software. Mehr zur Anmeldung liest du im Ratgeber [Single Sign-On und 2FA](/ratgeber/sso-und-2fa).
+
+## 5. Besondere Daten und Löschkonzept
+
+Gesundheitsdaten, etwa Krankmeldungen in HR-Software, gehören zu den besonderen Kategorien nach Art. 9 DSGVO und brauchen strengere Schutzmaßnahmen. Für Bewerberdaten, Kundendaten und Newsletter-Kontakte brauchst du außerdem Löschfristen: Was nicht mehr gebraucht wird und keiner Aufbewahrungspflicht unterliegt, muss weg. Gute Software kann Löschregeln automatisch anwenden.
+
+<Callout type="tipp">
+  Trag jede neue Software in dein Verzeichnis der Verarbeitungstätigkeiten (Art. 30 DSGVO) ein, sobald du den AVV abgeschlossen hast. So hast du bei einer Anfrage der Aufsichtsbehörde alles an einem Ort.
+</Callout>
+
+## Fragen an den Anbieter
+
+<Checklist
+  items={[
+    "Können Sie mir den AVV und die TOM vor Vertragsschluss schicken?",
+    "In welchen Ländern liegen Daten und Backups?",
+    "Welche Subunternehmer sitzen außerhalb der EU, und auf welcher Grundlage?",
+    "Welche Zertifikate haben Sie, und was ist ihr Geltungsbereich?",
+    "Gibt es Zwei-Faktor-Anmeldung und Single Sign-On – in welchem Tarif?",
+    "Wie bekomme ich meine Daten am Vertragsende in einem offenen Format zurück?",
+  ]}
+/>
+
+Allgemeine Informationen zur DSGVO bietet die [Bundesbeauftragte für den Datenschutz](https://www.bfdi.bund.de/); für Unternehmen zuständig ist die Datenschutzaufsicht deines Bundeslandes.
+
+<Callout type="recht">
+  Dieser Ratgeber ersetzt keine Rechtsberatung. Bei sensiblen Daten oder großen Datenmengen solltest du deinen Datenschutzbeauftragten einbeziehen.
+</Callout>

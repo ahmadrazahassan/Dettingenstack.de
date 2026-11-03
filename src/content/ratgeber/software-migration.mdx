@@ -1,0 +1,66 @@
+## Die drei Regeln
+
+Bei einem Software-Wechsel gehen Daten selten durch einen technischen Fehler verloren, sondern weil niemand vorher festgelegt hat, was mit muss, und weil das Altsystem zu früh abgeschaltet wird. Drei Regeln verhindern das: **Inventur vor Import**, **Testimport vor Echtimport** und **Archiv vor Abschaltung**.
+
+## Phase 1: Inventur
+
+<Checklist
+  items={[
+    "Welche Datenarten gibt es: Stammdaten, Bewegungsdaten, Dokumente, Einstellungen?",
+    "Wie viele Datensätze je Art, und aus welchem Zeitraum?",
+    "In welchem Format lassen sie sich exportieren?",
+    "Welche Verknüpfungen bestehen, etwa Kunde zu Rechnung zu Dokument?",
+    "Welche Daten sind steuerlich relevant und aufbewahrungspflichtig?",
+    "Welche Daten sind personenbezogen und müssen gelöscht statt übernommen werden?",
+  ]}
+/>
+
+Nicht alles muss ins neue System. Abgeschlossene Vorgänge kannst du oft archivieren statt migrieren – das spart Aufwand und hält das neue System schlank.
+
+## Phase 2: Bereinigung
+
+Bereinige im Altsystem oder in der Export-Datei, nicht nach dem Import. Typische Aufgaben: Dubletten zusammenführen, Pflichtfelder füllen, Schreibweisen vereinheitlichen, veraltete Datensätze aussortieren. Personenbezogene Daten, für die es keinen Zweck und keine Aufbewahrungspflicht mehr gibt, löschst du nach Art. 17 [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679) – eine Migration ist dafür eine gute Gelegenheit.
+
+## Phase 3: Mapping und Testimport
+
+Lege in einer Tabelle fest, welches alte Feld in welches neue Feld wandert, und wie Werte umgesetzt werden, etwa Status „A“ zu „Aktiv“. Dann folgt mindestens ein vollständiger Testimport in eine Testumgebung.
+
+<DataTable
+  head={["Prüfung", "Wie"]}
+  rows={[
+    ["Vollständigkeit", "Anzahl der Datensätze je Art in Alt- und Neusystem vergleichen"],
+    ["Richtigkeit", "Stichproben: 20 bis 50 Datensätze Feld für Feld prüfen"],
+    ["Summen", "Offene Posten, Salden, Urlaubskonten oder Lagerbestände abgleichen"],
+    ["Verknüpfungen", "Gehören Dokumente und Vorgänge zum richtigen Datensatz?"],
+    ["Sonderfälle", "Umlaute, lange Texte, leere Felder, sehr alte Datensätze"],
+  ]}
+/>
+
+<Callout type="tipp">
+  Lass die Stichproben von den Menschen prüfen, die täglich mit den Daten arbeiten. Sie erkennen Fehler, die in keiner Spaltenzuordnung auffallen.
+</Callout>
+
+## Phase 4: Umstellung
+
+<Steps
+  steps={[
+    { title: "Stichtag festlegen", text: "Am besten zum Monats- oder Quartalsende, nicht im Jahresabschluss." },
+    { title: "Altsystem einfrieren", text: "Ab dem Stichtag keine Änderungen mehr im Altsystem." },
+    { title: "Finaler Import", text: "Mit dem getesteten Verfahren, danach die Prüfungen aus dem Testimport wiederholen." },
+    { title: "Freigabe", text: "Fachbereiche bestätigen schriftlich, dass die Daten stimmen." },
+  ]}
+/>
+
+## Phase 5: Archiv vor Abschaltung
+
+Steuerlich relevante Daten musst du für die Dauer der Aufbewahrungsfristen lesbar halten – 10 Jahre für Bücher und Abschlüsse, 8 Jahre für Buchungsbelege ([§ 147 AO](https://www.gesetze-im-internet.de/ao_1977/__147.html), [§ 257 HGB](https://www.gesetze-im-internet.de/hgb/__257.html)). Die Finanzverwaltung kann Datenzugriff verlangen, auch auf Daten aus dem alten System. Möglichkeiten:
+
+- Daten vollständig ins neue System übernehmen,
+- einen Lesezugriff auf das Altsystem behalten,
+- einen Archiv-Export in einem auswertbaren Format erstellen und in einem revisionssicheren Archiv ablegen ([Revisionssichere Archivierung](/ratgeber/revisionssichere-archivierung)).
+
+Kündige das Altsystem erst, wenn eine dieser Lösungen steht. Bei Cloud-Software: Regle den Datenexport schon im Vertrag ([SaaS-Verträge](/ratgeber/saas-vertraege)).
+
+## Wer was macht
+
+Viele Anbieter übernehmen Daten aus verbreiteten Systemen gegen Gebühr oder kostenlos. Frag konkret, welche Formate sie importieren, wer das Mapping macht und wie viele Testimporte enthalten sind. Den Aufwand für die interne Prüfung trägst du in jedem Fall selbst – plane ihn in die [Gesamtkosten](/ratgeber/software-kosten-berechnen) ein.

@@ -1,0 +1,75 @@
+## Was die GoBD sind
+
+GoBD steht für „Grundsätze zur ordnungsmäßigen Führung und Aufbewahrung von Büchern, Aufzeichnungen und Unterlagen in elektronischer Form sowie zum Datenzugriff“. Es handelt sich um ein Schreiben des Bundesfinanzministeriums, also eine Verwaltungsanweisung. Sie bindet die Finanzämter und erklärt, wie sie die gesetzlichen Pflichten aus der Abgabenordnung und dem Handelsgesetzbuch auslegen – vor allem [§ 147 AO](https://www.gesetze-im-internet.de/ao_1977/__147.html) und [§ 257 HGB](https://www.gesetze-im-internet.de/hgb/__257.html).
+
+Die GoBD gelten für alle, die steuerlich relevante Daten elektronisch verarbeiten. Das betrifft auch kleine Unternehmen mit Einnahmen-Überschuss-Rechnung, sobald Belege oder Aufzeichnungen digital entstehen.
+
+## Die sechs Grundsätze
+
+<DataTable
+  head={["Grundsatz", "Was das praktisch heißt"]}
+  rows={[
+    ["Nachvollziehbarkeit und Nachprüfbarkeit", "Ein sachverständiger Dritter muss jeden Geschäftsvorfall vom Beleg bis zur Buchung verfolgen können."],
+    ["Vollständigkeit", "Jeder Geschäftsvorfall wird erfasst – einzeln, nicht in Summen, soweit zumutbar."],
+    ["Richtigkeit", "Buchungen geben die Geschäftsvorfälle zutreffend wieder."],
+    ["Zeitgerechte Erfassung", "Bare Vorgänge täglich, unbare innerhalb von zehn Tagen; spätestens bis Ende des Folgemonats bei periodischer Buchung."],
+    ["Ordnung", "Belege und Buchungen sind systematisch abgelegt und auffindbar."],
+    ["Unveränderbarkeit", "Änderungen müssen erkennbar bleiben. Ursprünglicher Inhalt darf nicht verloren gehen."],
+  ]}
+/>
+
+## Aufbewahrungsfristen
+
+Seit dem 1. Januar 2025 gilt für Buchungsbelege eine kürzere Frist. Die Fristen nach [§ 147 Abs. 3 AO](https://www.gesetze-im-internet.de/ao_1977/__147.html):
+
+<DataTable
+  head={["Unterlagen", "Frist"]}
+  rows={[
+    ["Bücher, Aufzeichnungen, Inventare, Jahresabschlüsse, Lageberichte, Eröffnungsbilanz", "10 Jahre"],
+    ["Buchungsbelege, zum Beispiel Rechnungen und Kontoauszüge", "8 Jahre"],
+    ["Empfangene und abgesandte Handels- und Geschäftsbriefe, sonstige steuerlich relevante Unterlagen", "6 Jahre"],
+  ]}
+/>
+
+Die Frist beginnt mit dem Schluss des Kalenderjahres, in dem die Unterlage entstanden ist. Sie läuft nicht ab, solange die Unterlagen für eine noch offene Steuerfestsetzung von Bedeutung sind. Für Rechnungen regelt [§ 14b UStG](https://www.gesetze-im-internet.de/ustg_1980/__14b.html) die Aufbewahrung zusätzlich.
+
+<Callout type="wichtig">
+  Elektronisch eingegangene Unterlagen musst du elektronisch aufbewahren. Eine per E-Mail empfangene Rechnung auszudrucken und die Datei zu löschen, reicht nicht. Das gilt besonders für E-Rechnungen im XML-Format.
+</Callout>
+
+## Unveränderbarkeit in der Praxis
+
+In Buchhaltungssoftware heißt Unveränderbarkeit meist **Festschreibung**: Nach einer Frist oder beim Monatsabschluss werden Buchungen gesperrt. Korrekturen erfolgen per Storno- und Neubuchung, nicht per Überschreiben. Tabellen in Excel erfüllen diese Anforderung in der Regel nicht, weil Änderungen spurlos möglich sind.
+
+Beim Scannen von Papierbelegen („ersetzendes Scannen“) darfst du das Papier vernichten, wenn das Verfahren dokumentiert ist und der Scan vollständig und lesbar ist. Ausnahmen gelten für Unterlagen, die im Original aufbewahrt werden müssen, etwa bestimmte Zollunterlagen.
+
+## Die Verfahrensdokumentation
+
+Die GoBD verlangen eine Verfahrensdokumentation. Sie beschreibt, wie Belege bei dir ankommen, wer sie prüft, wie sie gebucht, gescannt und archiviert werden und welche Software beteiligt ist. Viele kleine Unternehmen haben keine – das wird bei Betriebsprüfungen regelmäßig bemängelt.
+
+<Checklist
+  items={[
+    "Allgemeine Beschreibung: Unternehmen, Organisation, Verantwortliche",
+    "Anwenderdokumentation: Wie werden Belege erfasst, geprüft und gebucht?",
+    "Technische Systemdokumentation: Welche Programme und Versionen, wo liegen die Daten?",
+    "Betriebsdokumentation: Datensicherung, Zugriffsrechte, Protokollierung",
+    "Internes Kontrollsystem: Vier-Augen-Prinzip, Freigaben, Abstimmungen",
+    "Regelmäßige Aktualisierung bei Software- oder Prozesswechsel",
+  ]}
+/>
+
+## Woran du GoBD-taugliche Software erkennst
+
+Kein Programm ist „GoBD-zertifiziert“ – ein amtliches Zertifikat gibt es nicht. Prüfstellen bescheinigen höchstens, dass eine Software bei richtiger Nutzung die Anforderungen erfüllen kann. Achte auf diese Funktionen:
+
+- Festschreibung von Buchungen und protokollierte Änderungen,
+- revisionssichere Archivierung von Belegen inklusive Originaldatei,
+- Datenexport für den Datenzugriff der Finanzverwaltung (Z1 bis Z3),
+- Zugriffsrechte und Protokollierung,
+- Export an dein Steuerbüro, oft über DATEV ([DATEV-Schnittstellen erklärt](/ratgeber/datev-schnittstelle)).
+
+Wie ein Dokumentenmanagement-System bei der Archivierung hilft, liest du im Ratgeber [Revisionssichere Archivierung](/ratgeber/revisionssichere-archivierung).
+
+<Callout type="recht">
+  Dieser Ratgeber gibt einen Überblick (Stand 2. November 2026) und ersetzt keine Steuerberatung. Maßgeblich ist das jeweils aktuelle GoBD-Schreiben des BMF.
+</Callout>

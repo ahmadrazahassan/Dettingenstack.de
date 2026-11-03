@@ -1,0 +1,63 @@
+## Was „revisionssicher“ bedeutet
+
+Der Begriff steht in keinem Gesetz. Er beschreibt, was Steuerrecht und Handelsrecht von einer elektronischen Archivierung verlangen: Unterlagen müssen **vollständig, unverändert, geordnet, auffindbar und lesbar** aufbewahrt werden – für die ganze Aufbewahrungsfrist. Rechtsgrundlagen sind vor allem [§ 147 AO](https://www.gesetze-im-internet.de/ao_1977/__147.html), [§ 257 HGB](https://www.gesetze-im-internet.de/hgb/__257.html) und für Rechnungen [§ 14b UStG](https://www.gesetze-im-internet.de/ustg_1980/__14b.html). Die GoBD der Finanzverwaltung konkretisieren die Anforderungen.
+
+## Welche Unterlagen wie lange
+
+<DataTable
+  head={["Unterlagen", "Frist nach § 147 Abs. 3 AO"]}
+  rows={[
+    ["Bücher, Aufzeichnungen, Inventare, Jahresabschlüsse, Lageberichte", "10 Jahre"],
+    ["Buchungsbelege, zum Beispiel Rechnungen, Quittungen, Kontoauszüge", "8 Jahre (seit 2025)"],
+    ["Empfangene und abgesandte Handels- und Geschäftsbriefe", "6 Jahre"],
+    ["Sonstige steuerlich relevante Unterlagen", "6 Jahre"],
+  ]}
+/>
+
+Die Frist beginnt am Ende des Kalenderjahres, in dem die Unterlage entstanden ist. Sie verlängert sich, solange eine Steuerfestsetzung noch offen ist, für die die Unterlage relevant ist.
+
+<Callout type="wichtig">
+  Was elektronisch bei dir ankommt, musst du elektronisch aufbewahren. Bei E-Rechnungen ist der strukturierte XML-Datensatz das Original – ein daraus erzeugtes PDF reicht allein nicht, wie das BMF-Schreiben vom 15. Oktober 2025 klarstellt ([Zusammenfassung der IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/steuern/bmf-schreiben-zur-e-rechnung-vom-15-10-2025-6774012)).
+</Callout>
+
+## Was ein DMS dafür können muss
+
+<DataTable
+  head={["Anforderung", "Funktion im DMS"]}
+  rows={[
+    ["Unveränderbarkeit", "Versionierung statt Überschreiben, Schreibschutz für archivierte Dokumente"],
+    ["Nachvollziehbarkeit", "Protokoll über Ablage, Änderungen, Zugriffe und Löschungen"],
+    ["Ordnung und Auffindbarkeit", "Volltextsuche, Indexfelder wie Belegdatum, Lieferant, Betrag"],
+    ["Aufbewahrungsfristen", "Fristen je Dokumentart, Löschsperre bis zum Fristende"],
+    ["Lesbarkeit", "Langzeitformate wie PDF/A, Original-XML bei E-Rechnungen, Viewer"],
+    ["Datenzugriff der Finanzverwaltung", "Export ausgewählter Dokumente und Indexdaten"],
+    ["Datenschutz", "Rollen und Rechte, Löschung nach Fristende für personenbezogene Daten"],
+  ]}
+/>
+
+Ein „GoBD-Zertifikat“ für Software gibt es nicht. Prüfberichte, etwa nach IDW PS 880, bestätigen nur, dass ein Programm bei richtiger Konfiguration die Anforderungen erfüllen kann. Ob dein Archiv revisionssicher ist, hängt auch davon ab, wie du es einsetzt.
+
+## Die Verfahrensdokumentation
+
+Beschreibe, wie Dokumente in dein Archiv gelangen, wer sie indexiert, wie Papier gescannt wird und wann es vernichtet werden darf. Ohne diese Beschreibung kann die Finanzverwaltung die Ordnungsmäßigkeit anzweifeln – auch wenn die Software alles kann. Eine Gliederung findest du im Ratgeber [GoBD einfach erklärt](/ratgeber/gobd).
+
+## Ersetzendes Scannen
+
+Papierbelege darfst du nach dem Scannen vernichten, wenn das Verfahren dokumentiert ist, der Scan vollständig und lesbar ist und die Übereinstimmung mit dem Original geprüft wurde. Ausnahmen gelten für Unterlagen, bei denen das Original rechtlich bedeutsam ist, etwa notarielle Urkunden oder bestimmte Zolldokumente. Im Zweifel sprich mit deinem Steuerbüro.
+
+## Checkliste für die Auswahl
+
+<Checklist
+  items={[
+    "Versionierung und Schreibschutz für archivierte Dokumente",
+    "Vollständiges Änderungs- und Zugriffsprotokoll",
+    "Aufbewahrungsfristen je Dokumentart mit Löschsperre",
+    "Original-XML bei E-Rechnungen wird gespeichert",
+    "Volltextsuche und frei definierbare Indexfelder",
+    "Export für Betriebsprüfung und für einen späteren Systemwechsel",
+    "Rollen und Rechte, Zwei-Faktor-Anmeldung",
+    "Serverstandort, AVV und Backups geklärt",
+  ]}
+/>
+
+Wenn du von einem Altsystem wechselst, gilt: Archivierte Daten müssen auch nach dem Wechsel lesbar bleiben. Wie du dabei vorgehst, steht in [Software-Migration ohne Datenverlust](/ratgeber/software-migration).

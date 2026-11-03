@@ -1,0 +1,72 @@
+## Lastenheft und Pflichtenheft
+
+Das **Lastenheft** schreibt der Auftraggeber. Es beschreibt, *was* die Software leisten soll und unter welchen Bedingungen. Das **Pflichtenheft** schreibt der Auftragnehmer. Es beschreibt, *wie* er die Anforderungen umsetzt. Bei Standardsoftware ersetzt oft ein ausführliches Angebot das Pflichtenheft – das Lastenheft bleibt trotzdem die Grundlage, damit Angebote vergleichbar sind.
+
+Ein Lastenheft lohnt sich ab dem Moment, in dem mehrere Abteilungen betroffen sind oder die Gesamtkosten einen fünfstelligen Betrag erreichen. Für ein kleines Tool reicht eine Seite mit Muss-Anforderungen.
+
+## Gliederung als Vorlage
+
+<DataTable
+  head={["Kapitel", "Inhalt"]}
+  rows={[
+    ["1. Ausgangslage", "Unternehmen, Abteilungen, heutige Systeme, Probleme"],
+    ["2. Ziele", "Was soll nach der Einführung besser sein – messbar formuliert"],
+    ["3. Prozesse", "Beschreibung der betroffenen Abläufe, gern mit einfachen Ablaufskizzen"],
+    ["4. Funktionale Anforderungen", "Was die Software tun muss, priorisiert nach Muss, Soll, Kann"],
+    ["5. Nicht-funktionale Anforderungen", "Nutzerzahl, Geschwindigkeit, Verfügbarkeit, Bedienung, Sprache"],
+    ["6. Schnittstellen", "Anbindung an Buchhaltung, DATEV, ERP, E-Mail, Anmeldung (SSO)"],
+    ["7. Datenübernahme", "Welche Altdaten in welchem Umfang übernommen werden"],
+    ["8. Datenschutz und Sicherheit", "Serverstandort, AVV, Zertifikate, Zwei-Faktor-Anmeldung, Löschkonzept"],
+    ["9. Betrieb und Support", "Cloud oder eigener Server, Supportzeiten, Schulung"],
+    ["10. Rahmenbedingungen", "Budget, Zeitplan, Ansprechpersonen, Angebotsform"],
+  ]}
+/>
+
+## Anforderungen prüfbar formulieren
+
+Eine Anforderung ist gut, wenn sich später eindeutig sagen lässt, ob sie erfüllt ist. Schreib aus Sicht der Nutzerin oder des Nutzers und nenne Mengen und Bedingungen.
+
+<DataTable
+  head={["Unklar", "Prüfbar"]}
+  rows={[
+    ["„Gute DATEV-Anbindung“", "„Buchungen und Belegbilder werden monatlich an DATEV Unternehmen online übertragen, ohne manuellen Datei-Export.“"],
+    ["„Einfache Urlaubsplanung“", "„Beschäftigte beantragen Urlaub per App, die Führungskraft genehmigt per Klick, der Resturlaub ist für beide sichtbar.“"],
+    ["„Schnelles System“", "„Die Suche nach einem Kunden liefert bei 20.000 Datensätzen in unter zwei Sekunden ein Ergebnis.“"],
+  ]}
+/>
+
+<Callout type="tipp">
+  Nummeriere alle Anforderungen. Bitte die Anbieter, jede Nummer mit „Standard“, „Konfiguration“, „Anpassung (Aufwand)“ oder „nicht möglich“ zu beantworten. So vergleichst du Antworten in einer Tabelle.
+</Callout>
+
+## Muss, Soll, Kann
+
+Halte die Muss-Liste kurz. Jede Muss-Anforderung schließt Anbieter aus – das ist gewollt, aber nur bei Dingen, ohne die du wirklich nicht arbeiten kannst. Typische Muss-Kriterien im deutschen Markt sind Datenhaltung in der EU, eine bestimmte DATEV-Schnittstelle oder die Erfüllung gesetzlicher Pflichten wie [E-Rechnung](/ratgeber/e-rechnungspflicht) oder [Zeiterfassung](/ratgeber/zeiterfassungspflicht).
+
+## Datenschutz gehört hinein
+
+Schreib Datenschutzanforderungen ins Lastenheft, nicht erst in die Vertragsverhandlung: Auftragsverarbeitungsvertrag nach Art. 28 [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679), Serverstandort, Subunternehmer, Löschfristen, Datenexport am Vertragsende. Die passenden Fragen stehen im [DSGVO-Check für Software](/ratgeber/dsgvo-check-software).
+
+## So setzt du das Lastenheft ein
+
+<Steps
+  steps={[
+    { title: "Mit den Fachbereichen schreiben", text: "Nicht allein in der IT oder Geschäftsführung – die Nutzer kennen die Ausnahmen." },
+    { title: "An die Longlist schicken", text: "Fünf bis acht Anbieter, mit Frist und Antwortformat." },
+    { title: "Antworten vergleichen", text: "Erfüllungsgrad je Anforderung, Aufwand für Anpassungen, Gesamtkosten." },
+    { title: "Demo mit eigenen Fällen", text: "Die drei besten Anbieter zeigen deine Fälle live." },
+  ]}
+/>
+
+<Checklist
+  items={[
+    "Ziele messbar formuliert",
+    "Anforderungen nummeriert und priorisiert",
+    "Schnittstellen und Datenübernahme beschrieben",
+    "Datenschutz und Sicherheit als eigenes Kapitel",
+    "Antwortformat und Frist für Anbieter festgelegt",
+    "Budgetrahmen und Zeitplan genannt",
+  ]}
+/>
+
+Wie du aus den Angeboten die Gesamtkosten ermittelst, steht in [Software-Kosten richtig kalkulieren](/ratgeber/software-kosten-berechnen).

@@ -1,0 +1,77 @@
+## Was ist eine E-Rechnung?
+
+Eine E-Rechnung ist seit 2025 nicht mehr „jede Rechnung, die elektronisch verschickt wird“. Nach [§ 14 UStG](https://www.gesetze-im-internet.de/ustg_1980/__14.html) ist eine E-Rechnung eine Rechnung in einem **strukturierten elektronischen Format**, das eine automatische Verarbeitung ermöglicht und der europäischen Norm EN 16931 entspricht. In der Praxis heißt das: XRechnung oder ZUGFeRD ab Version 2.0.1 – wobei die ZUGFeRD-Profile MINIMUM und BASIC-WL nicht ausreichen.
+
+Ein PDF, das du per E-Mail verschickst, ist dagegen eine „sonstige Rechnung“. Auch ein eingescanntes Papierdokument zählt nicht. Hybride Formate wie ZUGFeRD enthalten zwar ein PDF für das Auge, maßgeblich ist aber der eingebettete XML-Datensatz.
+
+## Die Fristen im Überblick
+
+Die Pflicht kommt in Stufen. Die Übergangsregeln stehen in [§ 27 Abs. 38 UStG](https://www.gesetze-im-internet.de/ustg_1980/__27.html).
+
+<DataTable
+  head={["Ab", "Was gilt", "Für wen"]}
+  rows={[
+    ["1. Januar 2025", "E-Rechnungen empfangen und verarbeiten können", "alle Unternehmen im Inland"],
+    ["1. Januar 2025 bis 31. Dezember 2026", "Papier oder PDF darfst du noch ausstellen", "alle Unternehmen"],
+    ["1. Januar 2027", "E-Rechnungen ausstellen", "Unternehmen mit mehr als 800.000 € Gesamtumsatz im Vorjahr"],
+    ["1. Januar 2027 bis 31. Dezember 2027", "Papier oder PDF weiterhin möglich", "Unternehmen bis 800.000 € Vorjahresumsatz"],
+    ["1. Januar 2028", "E-Rechnungen ausstellen", "alle Unternehmen im inländischen B2B-Geschäft"],
+  ]}
+/>
+
+Die Pflicht betrifft Leistungen zwischen inländischen Unternehmen. Rechnungen an Privatpersonen sind nicht erfasst, Rechnungen an öffentliche Auftraggeber laufen schon länger über eigene E-Rechnungsregeln.
+
+<Callout type="wichtig">
+  Empfangen musst du schon heute. Wenn dir ein Lieferant eine XRechnung schickt, darfst du nicht auf einem PDF bestehen. Prüfe deshalb, ob dein Postfach, deine Buchhaltung oder dein Steuerbüro XML-Dateien lesen und archivieren kann.
+</Callout>
+
+## Wer ist ausgenommen?
+
+Vom **Ausstellen** von E-Rechnungen ausgenommen sind laut BMF-Schreiben vom 15. Oktober 2025 ([Zusammenfassung der IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/steuern/bmf-schreiben-zur-e-rechnung-vom-15-10-2025-6774012)):
+
+- **Kleinbetragsrechnungen** bis 250 € brutto nach [§ 33 UStDV](https://www.gesetze-im-internet.de/ustdv_1980/__33.html),
+- **Fahrausweise**,
+- **Kleinunternehmer** nach § 19 UStG – sie dürfen weiter sonstige Rechnungen schicken (mehr dazu im Ratgeber [Rechnungen als Kleinunternehmer](/ratgeber/kleinunternehmer-rechnung)).
+
+Die Pflicht zum **Empfangen** gilt trotzdem für alle.
+
+## Was das BMF zu Fehlern sagt
+
+Das BMF-Schreiben vom 15. Oktober 2025 unterscheidet drei Arten von Fehlern. Formatfehler machen aus der E-Rechnung eine sonstige Rechnung – der Vorsteuerabzug ist dann gefährdet. Verstöße gegen Geschäftsregeln der Norm sind meist unschädlich, solange alle Pflichtangaben stimmen. Inhaltliche Fehler wie ein falscher Steuersatz wirken sich direkt auf den Vorsteuerabzug aus, bis eine berichtigte Rechnung vorliegt.
+
+Alle Pflichtangaben nach § 14 Abs. 4 UStG müssen im strukturierten Teil stehen. Ein Link auf ein externes Dokument reicht nicht.
+
+## Archivierung
+
+Aufbewahren musst du den **strukturierten Datensatz** im Originalformat, nicht nur ein PDF-Abbild ([§ 14b UStG](https://www.gesetze-im-internet.de/ustg_1980/__14b.html)). Wenn deine Software die XML-Datei beim Import in ein PDF umwandelt und das Original verwirft, ist das ein Problem. Wie lange du aufbewahren musst, erklärt der Ratgeber [GoBD einfach erklärt](/ratgeber/gobd).
+
+## Was deine Software können muss
+
+<Checklist
+  items={[
+    "XRechnung und ZUGFeRD (ab 2.0.1, Profil EN 16931 oder höher) erzeugen",
+    "Eingehende XRechnungen lesbar anzeigen, nicht nur als Datei-Anhang",
+    "Eingehende Rechnungen validieren und Fehler melden",
+    "Das XML-Original GoBD-konform archivieren",
+    "Leitweg-ID für Rechnungen an öffentliche Auftraggeber unterstützen",
+    "Versand per E-Mail und, falls nötig, über Peppol",
+    "Export an DATEV oder dein Steuerbüro inklusive Belegbild",
+  ]}
+/>
+
+## So bereitest du dich vor
+
+<Steps
+  steps={[
+    { title: "Empfang klären", text: "Leg fest, an welche Adresse E-Rechnungen gehen und wer sie prüft. Ein eigenes Postfach für Eingangsrechnungen hilft." },
+    { title: "Software prüfen", text: "Frag deinen Anbieter schriftlich, welche Formate und Profile unterstützt werden und ob das XML archiviert wird." },
+    { title: "Mit dem Steuerbüro sprechen", text: "Kläre, wie E-Rechnungen künftig übergeben werden – als Datensatz oder über DATEV Unternehmen online." },
+    { title: "Testen", text: "Erstell vor 2027 Testrechnungen und lass sie von Kunden oder einem Validator prüfen." },
+  ]}
+/>
+
+Weitere Informationen zu Formaten und zur Rechnungsstellung an Behörden bündelt das [Informationsportal des Bundes](https://www.e-rechnung-bund.de/).
+
+<Callout type="recht">
+  Dieser Ratgeber fasst die Rechtslage vom 2. November 2026 zusammen und ersetzt keine Steuerberatung. Ob die Umsatzgrenze von 800.000 € für dich gilt, berechnet dein Steuerbüro anhand des Gesamtumsatzes nach § 19 Abs. 2 UStG.
+</Callout>

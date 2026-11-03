@@ -1,0 +1,57 @@
+## Was „DATEV-Schnittstelle“ bedeuten kann
+
+DATEV ist in Deutschland die Software der meisten Steuerbüros. Wenn ein Anbieter mit „DATEV-Schnittstelle“ wirbt, kann das sehr Unterschiedliches heißen. Grob gibt es vier Wege:
+
+<DataTable
+  head={["Weg", "Wie es funktioniert", "Aufwand für dich"]}
+  rows={[
+    ["DATEV-Export (Buchungsstapel)", "Die Software erzeugt eine CSV-Datei im DATEV-Format, die du ans Steuerbüro schickst.", "manuell, meist monatlich"],
+    ["Belegbilder per Upload", "Belege gehen als PDF oder Bild an DATEV Unternehmen online, gebucht wird im Steuerbüro.", "gering, aber doppelte Erfassung möglich"],
+    ["Direkte Übertragung", "Buchungsvorschläge und Belegbilder werden automatisch an DATEV übertragen, oft per Cloud-Verbindung.", "gering, Einrichtung einmalig"],
+    ["Lohn-Schnittstelle", "HR-Software übergibt Stammdaten und Bewegungsdaten an DATEV Lohn und Gehalt oder LODAS.", "gering, Einrichtung mit Steuerbüro"],
+  ]}
+/>
+
+## Zuerst das Steuerbüro fragen
+
+Die wichtigste Frage stellst du nicht dem Software-Anbieter, sondern deinem Steuerbüro: Wie möchte es die Daten bekommen? Manche Kanzleien bestehen auf DATEV Unternehmen online, andere arbeiten gut mit Export-Dateien. Wenn du hier schon vor dem Kauf Klarheit hast, sparst du später jeden Monat Zeit.
+
+<Checklist
+  items={[
+    "Welche DATEV-Produkte nutzt das Steuerbüro (Kanzlei-Rechnungswesen, Unternehmen online, Lohn und Gehalt, LODAS)?",
+    "Soll ich Buchungen vorkontieren oder nur Belege liefern?",
+    "Welcher Kontenrahmen gilt (SKR 03 oder SKR 04)?",
+    "Wie oft soll übergeben werden – monatlich, quartalsweise, laufend?",
+    "Wer richtet die Verbindung ein, und kostet das extra?",
+  ]}
+/>
+
+## Buchhaltung und Rechnungen
+
+Für Buchhaltungs- und Rechnungsprogramme ist der **Buchungsstapel-Export** am weitesten verbreitet. Er enthält Buchungssätze mit Konten, Beträgen und Belegnummern. Gut ist, wenn auch die Belegbilder mitgehen – dann muss niemand Belege einzeln zuordnen.
+
+Eine **direkte Übertragung** an DATEV Unternehmen online ist komfortabler, weil kein Datei-Versand nötig ist. Achte darauf, ob die Übertragung im Tarif enthalten ist oder nur im teureren Paket. Wichtig bleibt die Aufbewahrung: Auch wenn Belege bei DATEV liegen, musst du Originale – etwa E-Rechnungen im XML-Format – nach [§ 147 AO](https://www.gesetze-im-internet.de/ao_1977/__147.html) und [§ 14b UStG](https://www.gesetze-im-internet.de/ustg_1980/__14b.html) aufbewahren. Mehr dazu im Ratgeber [GoBD einfach erklärt](/ratgeber/gobd).
+
+## Lohn: andere Schnittstellen
+
+HR-Software übergibt keine Buchungen, sondern Lohndaten: Stammdaten neuer Mitarbeitender, Abwesenheiten, Überstunden, Zuschläge. Hier zählen zwei DATEV-Programme:
+
+- **DATEV Lohn und Gehalt** – verbreitet in Kanzleien, die für viele kleinere Mandanten abrechnen,
+- **DATEV LODAS** – häufig bei Kanzleien mit größeren Mandanten oder eigener Lohnabteilung.
+
+Frag den HR-Anbieter, welches der beiden Programme unterstützt wird und ob Stammdaten in beide Richtungen fließen. In unserer [HR-Software-Bestenliste](/hr-software) siehst du, welche Anbieter eine DATEV-Lohn-Schnittstelle nennen – und in welchem Tarif.
+
+<Callout type="tipp">
+  Frag den Anbieter, ob er auf dem DATEV-Marktplatz als Partner gelistet ist. Das sagt nichts über die Qualität der Software, zeigt aber, dass die Schnittstelle mit DATEV abgestimmt ist.
+</Callout>
+
+## Typische Stolpersteine
+
+- **Kontenzuordnung:** Wenn Erlöskonten oder Steuerschlüssel nicht zum Kontenrahmen des Steuerbüros passen, müssen Buchungen korrigiert werden.
+- **Doppelte Belege:** Wenn sowohl du als auch das Steuerbüro Belege hochladet, entstehen Dubletten.
+- **Festschreibung:** Exportierte Zeiträume sollten in deiner Software gesperrt werden, sonst passen die Daten nicht mehr zusammen.
+- **Tarifgrenzen:** Die Schnittstelle ist manchmal nur im höheren Tarif enthalten.
+
+## Fazit für die Auswahl
+
+Entscheide anhand des Wegs, den dein Steuerbüro bevorzugt, und lass dir die Schnittstelle in einer Demo mit echten Daten zeigen. Bei der Einführung hilft ein gemeinsamer Termin mit Anbieter und Kanzlei mehr als jede Dokumentation.

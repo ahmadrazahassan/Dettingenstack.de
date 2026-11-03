@@ -1,0 +1,63 @@
+## Die Methoden im Überblick
+
+<DataTable
+  head={["Methode", "Grundidee", "Passt zu"]}
+  rows={[
+    ["Kanban", "Aufgaben fließen über ein Board, die Zahl paralleler Aufgaben je Spalte ist begrenzt.", "laufende Arbeit mit wechselnden Prioritäten: Support, Marketing, Agenturen"],
+    ["Scrum", "Arbeit in festen Sprints von meist ein bis vier Wochen mit Planung, täglicher Abstimmung und Review.", "Produkt- und Softwareentwicklung mit stabilen Teams"],
+    ["Wasserfall", "Phasen nacheinander: Anforderungen, Planung, Umsetzung, Test, Abnahme.", "Projekte mit festem Umfang, Termin und Budget, etwa Bau oder Umzug"],
+    ["Hybrid", "Grobplanung mit Meilensteinen, Umsetzung in Sprints oder auf Boards.", "die meisten Projekte im Mittelstand"],
+  ]}
+/>
+
+## Kanban
+
+Kanban stammt aus der Produktion und ist im Büro vor allem als Board bekannt: Spalten wie „Offen“, „In Arbeit“, „Prüfung“ und „Erledigt“. Entscheidend ist aber eine Regel, die viele weglassen: die **Begrenzung der Arbeit in Bearbeitung** (WIP-Limit). Wenn „In Arbeit“ nur fünf Karten fassen darf, muss erst etwas fertig werden, bevor Neues beginnt. So werden Engpässe sichtbar.
+
+Kanban braucht keine festen Rollen und kein Sprint-Ritual. Es eignet sich deshalb gut als Einstieg.
+
+## Scrum
+
+Scrum organisiert Arbeit in Sprints. Am Anfang steht die Planung, was im Sprint fertig werden soll, am Ende ein Review mit Ergebnis und eine Retrospektive zum Vorgehen. Es gibt drei Verantwortlichkeiten: Product Owner (was ist am wichtigsten), Scrum Master (Methode und Hindernisse) und das Entwicklungsteam.
+
+Scrum entfaltet seine Stärke, wenn ein Team dauerhaft zusammenarbeitet und regelmäßig nutzbare Ergebnisse liefert. Für ein Team, das nebenbei viele kleine Anfragen bearbeitet, ist es oft zu schwergewichtig.
+
+## Wasserfall
+
+Das klassische Phasenmodell plant zuerst vollständig und setzt dann um. Es ist besser als sein Ruf, wenn Anforderungen wirklich feststehen und Änderungen teuer sind. Typische Werkzeuge sind Gantt-Diagramme mit Abhängigkeiten und Meilensteinen.
+
+## Was die Software können muss
+
+<DataTable
+  head={["Methode", "Wichtige Funktionen"]}
+  rows={[
+    ["Kanban", "Boards mit eigenen Spalten, WIP-Limits, Swimlanes, Durchlaufzeiten"],
+    ["Scrum", "Backlog, Sprints, Story Points oder Schätzungen, Burndown, Sprint-Berichte"],
+    ["Wasserfall", "Gantt-Diagramm, Abhängigkeiten, Meilensteine, Ressourcenplanung"],
+    ["Hybrid", "mehrere Ansichten auf dieselben Aufgaben, Portfolio-Übersicht"],
+  ]}
+/>
+
+Viele Tools bieten alle Ansichten – aber nicht in jedem Tarif. Gantt-Diagramme, Abhängigkeiten oder Portfolio-Ansichten sind oft den höheren Tarifen vorbehalten. Prüfe das, bevor du pro Nutzer kalkulierst ([Software-Kosten richtig kalkulieren](/ratgeber/software-kosten-berechnen)).
+
+<Callout type="tipp">
+  Teste ein Tool mit einem echten, laufenden Projekt deines Teams statt mit Beispieldaten. Nach zwei Wochen weißt du, ob die Ansichten zu eurer Arbeitsweise passen.
+</Callout>
+
+## Wie du die passende Methode findest
+
+<Checklist
+  items={[
+    "Steht der Umfang des Projekts fest, oder ändert er sich laufend?",
+    "Arbeitet ein festes Team zusammen, oder wechseln Beteiligte?",
+    "Gibt es feste Termine von außen, etwa Kundenabnahmen?",
+    "Kommen laufend neue, kleinere Aufgaben hinzu?",
+    "Wer muss den Fortschritt sehen – nur das Team oder auch Kunden und Geschäftsführung?",
+  ]}
+/>
+
+Wenn du viele Fragen mit „ändert sich“ beantwortest, starte mit Kanban. Bei festem Umfang und Termin ist eine Phasenplanung mit Meilensteinen der bessere Rahmen. Scrum lohnt sich, wenn ein Team regelmäßig Produkte weiterentwickelt.
+
+## Datenschutz nicht vergessen
+
+Projektmanagement-Tools enthalten oft Kundendaten, Namen und Kommentare zu Personen. Wie bei jeder Cloud-Software brauchst du einen Auftragsverarbeitungsvertrag nach Art. 28 [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679) und solltest wissen, wo die Daten liegen. Die wichtigsten Fragen stehen im [DSGVO-Check für Software](/ratgeber/dsgvo-check-software).
