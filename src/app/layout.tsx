@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { CompareProvider } from "@/components/compare/compare-provider";
 import { Footer } from "@/components/layout/footer";
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             ],
           }}
         />
+        <SpeedInsights />
       </body>
     </html>
   );

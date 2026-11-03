@@ -91,6 +91,17 @@ export default function DatenschutzPage() {
         zusammen.
       </p>
 
+      <h2>Ladezeitmessung</h2>
+      <p>
+        Um die Ladezeiten unserer Seiten zu verbessern, nutzen wir Vercel Speed
+        Insights. Dabei werden Leistungswerte wie Lade- und Reaktionszeiten
+        zusammen mit der aufgerufenen Seite, dem Gerätetyp und dem Browser an
+        Vercel übermittelt. Speed Insights setzt keine Cookies und erstellt
+        keine Profile; Vercel verarbeitet die Daten als Auftragsverarbeiterin
+        (siehe Hosting). Rechtsgrundlage ist unser berechtigtes Interesse an
+        einer schnellen Website (Art. 6 Abs. 1 lit. f DSGVO).
+      </p>
+
       <h2>Reichweitenmessung</h2>
       {analytics ? (
         <p>
